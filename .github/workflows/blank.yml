@@ -6,6 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: Run a Python script
       run: python3 draft.py
