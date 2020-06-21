@@ -28,3 +28,5 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         touch a.txt
+        git add .
+        git commit -m "touch text"
