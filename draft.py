@@ -26,6 +26,6 @@ for branch in branches:
 
 os.chdir(home_dir)
 
-shutil.move(str(makefile.resolve()), str(home_dir.resolve()))
-shutil.move(str(source_dir.resolve()), str(home_dir.resolve()))
+shutil.copy(str(makefile.resolve()), str(home_dir.resolve()))
+shutil.copy(str(source_dir.resolve()), str(home_dir.resolve()))
 shutil.rmtree(str(home_dir / "quantopian-doc-ja"))
