@@ -28,9 +28,9 @@ jobs:
           for branch in "${!branches[@]}"
           do
             echo "git checkout origin ${branch}"
-            git checkout origin ${branch}
+            git checkout ${branch}
           done
-          git checkout origin master
+          git checkout master
           cd ..
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
