@@ -7,16 +7,16 @@ jobs:
     steps:
       - name: Hello world
         run: |
-          declare -A exam
-          exam["suzuki"]=80
-          exam["tanaka"]=95
-          exam["yamamoto"]=90
-          for e in ${exam[@]} 
+          declare -A branches
+          branches["issue_8"]="source/tutorial"
+          branches["issue_14"]="source/tutorial"
+          branches["tutorial3_alphalens_lesson1_to_5"]="source/tutorial"
+          for branch in ${branches[@]} 
           do 
-            echo $e
+            echo $branch
           done
           echo ${SOURCE_REPOSITORY}
-          git clone ${SOURCE_REPOSITORY}
+          # git clone ${SOURCE_REPOSITORY}
           cd ${REPOSITORY_DIR}
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
