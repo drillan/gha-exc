@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello world
+      - name: merge draft
         run: |
           declare -A branches
           branches["issue_8"]="source/tutorial"
@@ -21,7 +21,6 @@ jobs:
           cd ${REPOSITORY_DIR}
           for branch in "${!branches[@]}"
           do
-            # echo "${branch}:${branches[${branch}]}"
             echo "fetch origin ${branch}"
             git fetch origin ${branch}
           done
@@ -37,6 +36,10 @@ jobs:
             git checkout ${branch} ${branches[${branch}]}
           done
           cd ..
+          rm -rf source
+          mv ${REPOSITORY_DIR}/Makefile .
+          mv ${REPOSITORY_DIR}/source .
+          rm -rf ${REPOSITORY_DIR}
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
           REPOSITORY_DIR: quantopian-doc-ja
