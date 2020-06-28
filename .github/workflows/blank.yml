@@ -7,8 +7,13 @@ jobs:
     steps:
       - name: Hello world
         run: |
-          for x in $NAMES; do
-            echo $x
+          declare -A exam
+          exam["suzuki"]=80
+          exam["tanaka"]=95
+          exam["yamamoto"]=90
+          for e in ${exam[@]} 
+          do 
+            echo $e
           done
         env:
           NAMES: AAA BBB
