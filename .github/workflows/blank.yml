@@ -16,8 +16,13 @@ jobs:
             echo $branch
           done
           echo ${SOURCE_REPOSITORY}
-          # git clone ${SOURCE_REPOSITORY}
+          git clone ${SOURCE_REPOSITORY}
           cd ${REPOSITORY_DIR}
+          for branch in "${!branches[@]}"
+          do
+            echo "${branch}:${branches[${branch}]}"
+          done
+          cd ..
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
           REPOSITORY_DIR: quantopian-doc-ja
