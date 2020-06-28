@@ -43,3 +43,15 @@ jobs:
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
           REPOSITORY_DIR: quantopian-doc-ja
+      - name: add commit
+        uses: EndBug/add-and-commit@v4
+        with:
+          message: "merge drafts"
+          force: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
