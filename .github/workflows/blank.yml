@@ -22,10 +22,12 @@ jobs:
           for branch in "${!branches[@]}"
           do
             # echo "${branch}:${branches[${branch}]}"
+            echo "fetch origin ${branch}"
             git fetch origin ${branch}
           done
           for branch in "${!branches[@]}"
           do
+            echo "git checkout origin ${branch}"
             git checkout origin ${branch}
           done
           git checkout origin master
