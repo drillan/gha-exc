@@ -20,8 +20,14 @@ jobs:
           cd ${REPOSITORY_DIR}
           for branch in "${!branches[@]}"
           do
-            echo "${branch}:${branches[${branch}]}"
+            # echo "${branch}:${branches[${branch}]}"
+            git fetch origin ${branch}
           done
+          for branch in "${!branches[@]}"
+          do
+            git checkout origin ${branch}
+          done
+          git checkout origin master
           cd ..
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
