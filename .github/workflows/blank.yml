@@ -16,6 +16,7 @@ jobs:
             echo $branch
           done
           echo ${SOURCE_REPOSITORY}
+          rm -rf ${REPOSITORY_DIR}
           git clone ${SOURCE_REPOSITORY}
           cd ${REPOSITORY_DIR}
           for branch in "${!branches[@]}"
