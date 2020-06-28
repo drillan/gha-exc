@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world
-        run: echo Hello world $NAMES
+        run: |
+          for x in $NAMES; do
+            echo $x
+          done
         env:
           NAMES: AAA BBB
