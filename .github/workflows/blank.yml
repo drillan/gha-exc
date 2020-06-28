@@ -16,5 +16,8 @@ jobs:
             echo $e
           done
           echo ${SOURCE_REPOSITORY}
+          git clone ${SOURCE_REPOSITORY}
+          cd ${REPOSITORY_DIR}
         env:
           SOURCE_REPOSITORY: https://github.com/tokyoquantopian/quantopian-doc-ja.git
+          REPOSITORY_DIR: quantopian-doc-ja
